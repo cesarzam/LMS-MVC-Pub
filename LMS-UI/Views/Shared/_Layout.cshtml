@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LMS_UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</head>
+<body>
+    <div class="top-sidebar">
+        <!-- Add logo and name on the left -->
+        <div class="logo">LMS </div>
+        <div class="name">
+            <img src="~/images/Woman-Face.jpg" alt="User Avatar" class="avatar">
+             Alex
+            <br>
+            <span id="currentDate">@DateTime.Now.ToString("MMMM dd, yyyy")</span>
+        </div>
+        <!-- Add login button on the right -->
+        <div class="login-button">Login</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Column (Nav Menu) -->
+            <div class="col-md-3">
+                <nav class="nav-menu" style="background-color: white; padding: 10px; width: 250px;">
+                    <!-- Add your nav menu items here -->
+                    <a class="nav-link" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Dashboard</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="MyCourse"><i class="bi bi-person"></i> My Course</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="coursecatalog"><i class="bi bi-book"></i> Course Catalog</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="courseschedule"><i class="bi bi-calendar"></i> Course Schedule</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="certificates"><i class="bi bi-award"></i> Certificates</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="resources"><i class="bi bi-globe"></i> Resources</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="feedback"><i class="bi bi-hand-thumbs-up"></i> Feedback</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="support"><i class="bi bi-telephone"></i> Support</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="videoadmin"><i class="bi bi-camera-reels"></i> Video Admin</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="videouser"><i class="bi bi-film"></i> Video User</a>
+                </nav>
+
+                <div style="background-color: #ffc107; padding: 10px; text-align: center; color: black; margin-top: 20px; border-radius: 10px; border: 6px solid #ffc107;width: 250px;">
+                    <div>
+                        <h4>UPDATES</h4>
+                    </div>
+                    <div>
+                        We are updating the system to provide real-time tracking of your progress.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Column (Rendered Pages) -->
+            <div class="col-md-6 mx-auto">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+
+            <div class="col-md-3">
+                <!-- Search Box -->
+                <div style="background-color: darkblue; padding: 10px; border-radius: 10px; color: white; text-align: center; border: 1px solid #add8e6;">
+                    Search
+                </div>
+                <div style="background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #add8e6;">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search courses" aria-label="Search courses" aria-describedby="searchIcon">
+                        <button class="btn btn-outline-secondary" type="button" id="searchIcon">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Box -->
+                <div style="background-color: darkblue; padding: 10px; border-radius: 10px; color: white; text-align: center; border: 1px solid #add8e6; margin-top: 20px;">
+                    Calendar
+                </div>
+                <div style="background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #add8e6;">
+                    <div id="fullCalendar"></div>
+                </div>
+                <!-- Messages Box -->
+                <div style="background-color: darkblue; padding: 10px; border-radius: 10px; color: white; text-align: center; border: 1px solid #add8e6; margin-top: 20px;">
+                    Alex's Messenger
+                </div>
+                <div style="background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #add8e6;">
+                     <img src="/images/MsgText.jpg" alt="Texting Image" style="max-width: 100%; border-radius: 5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - LMS_UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('#fullCalendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            defaultDate: new Date(), // Set the default date
+            editable: true,
+            eventLimit: true, // Allow "more" link when too many events
+            height: '250px',
+            events: [
+                // Add your events here
+                {
+                    title: 'Event 1',
+                    start: '2023-11-01'
+                },
+                {
+                    title: 'Event 2',
+                    start: '2023-11-05',
+                    end: '2023-11-07'
+                }
+                // Add more events as needed
+            ]
+        });
+    });
+</script>
+

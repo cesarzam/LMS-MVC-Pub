@@ -1,0 +1,181 @@
+/* Site.cs */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, 
+.btn:active:focus, 
+.btn-link.nav-link:focus, 
+.form-control:focus, 
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 70px;
+}
+
+/* Custom styles */
+.top-sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5050ff; /* Light blue color */
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 15px; /* Adjust the radius as needed */
+    border-top-right-radius: 15px; /* Adjust the radius as needed */
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.name {
+    font-size: 18px;
+    margin-right: 30px; /* Adjust the margin as needed */
+}
+
+.login-button {
+    padding: 8px 16px;
+    background-color: #4caf50; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    /* Add your nav menu styling here */
+}
+
+.search-box, .calendar-box, .messages-box {
+    /* Add styling for your boxes here */
+}
+
+/* Add this CSS in your style sheet or in a style block in the head */
+.nav-menu a:hover,
+.nav-menu a:active {
+    background-color: #ffc107; /* Change this to your desired orange color */
+    color: #000; /* Change this to your desired text color */
+}
+
+.nav-menu a {
+    font-size: 20px; /* Adjust the size as needed */
+}
+
+.bg-yellow {
+    background-color: #ffc107; /* Adjust the color as needed */
+    border: 6px solid #ffc107; /* Add a border with the same color */
+}
+
+.bg-blue {
+    background-color: #007bff; /* Adjust the color as needed */
+    border: 6px solid #007bff; /* Add a border with the same color */
+}
+
+.bg-cyan {
+    background-color: #17a2b8; /* Adjust the color as needed */
+    border: 6px solid #17a2b8; /* Add a border with the same color */
+}
+
+.avatar {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Adjust the border-radius as needed */
+    overflow: hidden;
+}
+
+    .custom-table thead.custom-header {
+        background-color: #258cfb; /* Set the desired light blue color */
+        color: white;
+    }
+
+    .custom-table th, .custom-table td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .custom-table tbody tr:hover {
+        background-color: #52FFFF;
+    }
+
+.btn {
+    border-radius: 4px; /* Adjust the border-radius for buttons */
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-box {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-icon {
+    /* Add styles for the search icon, adjust as needed */
+    margin-right: 5px;
+    color: #555; /* Adjust the color of the icon */
+}
+
+.form-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form-container label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+        background-color: #45a049;
+}

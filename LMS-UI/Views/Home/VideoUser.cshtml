@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Hello Alex";
+}
+
+<div class="text-center">
+    <h4 class="display-4">Your List of Videos</h4>
+</div>
+<table class="custom-table">
+    <thead class="custom-header">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var video in Model)
+        {
+            <tr>
+                <td>@video.Id</td>
+                <td>@video.Title</td>
+                <td>@video.Description</td>
+                <td style="font-weight:bold; color:green">@video.Status</td>
+                <td>
+                    <a asp-controller="Home" asp-action="UserViewVideo" asp-route-id="@video.Id"
+                       class="btn btn-warning btn-sm">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

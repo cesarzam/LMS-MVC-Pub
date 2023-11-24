@@ -1,0 +1,33 @@
+﻿@model Video
+@using System.IO
+
+@if (Model != null)
+{
+    <div class="container">
+        <h2 class="mt-4">Video Details</h2>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">ID: @Model.Id</h5>
+                <h5 class="card-title">Title: @Model.Title</h5>
+                <h5 class="card-text">Description: @Model.Description</h5>
+            </div>
+        </div>
+
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+            <video class="embed-responsive-item" controls>
+                @{
+                    var fileInfo = new FileInfo(Model.FilePath);
+                    var videoFileName = fileInfo.Name;
+                }
+
+                <!-- Call the GetVideo action with the correct video file name -->
+                <source src="@Url.Action("GetVideo", "Home", new { videoFileName })" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+}
+else
+{
+    <p>Video not found.</p>
+}

@@ -1,0 +1,42 @@
+﻿/* LMS_UI.styles.cs */
+.top-sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.name {
+    font-size: 18px;
+}
+
+.login-button {
+    padding: 8px 16px;
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    /* Add your nav menu styling here */
+}
+
+.search-box, .calendar-box, .messages-box {
+    /* Add styling for your boxes here */
+}
+
+/* Add this CSS in your style sheet or in a style block in the head */
+.nav-menu a:hover,
+.nav-menu a:active {
+    background-color: #ffc107; /* Change this to your desired orange color */
+    color: #000; /* Change this to your desired text color */
+}

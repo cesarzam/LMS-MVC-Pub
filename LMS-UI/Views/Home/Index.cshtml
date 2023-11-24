@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" style="font-family: 'Roboto', sans-serif; background-color: white; color: white; padding: 10px;">
+    <h1 class="display-4" style="color: #5050ff;">LMS DASHBOARD</h1>
+</div>
+<div class="container mt-4 mx-auto">
+    <div class="col-md-12">
+        <!-- Existing Head Picture -->
+        <div class="text-center" style="background-color: darkblue; color: white; padding: 20px; border-radius: 10px;">
+            <h1>Welcome back, Alex</h1>
+            <p>Your last course is ready <a href="/course-ready" style="color: white; text-decoration: underline;">here</a>.</p>
+        </div>
+    </div>
+
+    <!-- ... Existing content ... -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card bg-yellow" style="border-radius: 10px; overflow: hidden;">
+                <img src="/images/leadership-course.png" class="card-img-top" alt="Leadership Course Image">
+                <div class="card-body text-center">
+                    <button class="btn btn-light btn-block text-black">Leadership Course</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-blue" style="border-radius: 10px; overflow: hidden;">
+                <img src="/images/team-building.png" class="card-img-top" alt="Team Building Image">
+                <div class="card-body text-center">
+                    <button class="btn btn-light btn-block text-black">Team Building</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-cyan" style="border-radius: 10px; overflow: hidden;">
+                <img src="/images/microsoft-365.png" class="card-img-top" alt="Microsoft 365 Image">
+                <div class="card-body text-center">
+                    <button class="btn btn-light btn-block text-black">Microsoft 365</button>
+                </div>
+            </div>
+       </div>
+
+
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; border: 2px solid #666; width: 48%; text-align: center;">
+                <!-- Performance Tracker Box Content -->
+                <p style="font-weight: bold;">Performance Tracker</p>
+                <a href="/images/performance.png"><img src="/images/performance.png" alt="Performance Tracker" style="width: 100%;"></a>
+            </div>
+
+            <div style="background-color: white; padding: 20px; border-radius: 10px; color: black; border: 2px solid #666; width: 48%; text-align: center;">
+                <!-- Courses Completion Box Content -->
+                <p style="font-weight: bold;">Courses Completion</p>
+                <a href="/images/completion.png"><img src="/images/completion.png" alt="Courses Completion" style="width: 100%;"></a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

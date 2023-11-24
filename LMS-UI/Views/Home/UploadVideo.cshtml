@@ -1,0 +1,27 @@
+﻿@model UploadVideoModel
+
+<div class="text-center">
+    <h4 class="display-4">Upload Videos</h4>
+</div>
+
+
+<div class="form-container">
+    <form asp-action="Upload" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <label asp-for="Title">Video Title:</label>
+        <input asp-for="Title" class="form-control" />
+
+        <label asp-for="Description">Video Description:</label>
+        <input asp-for="Description" class="form-control" />
+
+        <label asp-for="VideoFile">Choose a Video File:</label>
+        <input type="file" asp-for="VideoFile" class="form-control" />
+        <span asp-validation-for="VideoFile" class="text-danger"></span>
+
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+
+@{
+    ViewData["Title"] = "Upload Video";
+}
